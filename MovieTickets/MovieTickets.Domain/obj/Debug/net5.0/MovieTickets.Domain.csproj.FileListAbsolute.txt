@@ -1,0 +1,12 @@
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.csproj.AssemblyReference.cache
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.AssemblyInfoInputs.cache
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.AssemblyInfo.cs
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\bin\Debug\net5.0\MovieTickets.Domain.deps.json
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\bin\Debug\net5.0\MovieTickets.Domain.dll
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\bin\Debug\net5.0\MovieTickets.Domain.pdb
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.dll
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\refint\MovieTickets.Domain.dll
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\MovieTickets.Domain.pdb
+C:\Users\DARKO\Desktop\FINKI\VI semestar\Integrirani sistemi\ISProba\MovieTicketsWebApplication\MovieTickets\MovieTickets.Domain\obj\Debug\net5.0\ref\MovieTickets.Domain.dll

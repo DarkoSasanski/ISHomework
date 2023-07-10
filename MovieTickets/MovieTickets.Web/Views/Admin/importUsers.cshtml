@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "ImportUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Import users</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="importUsers" enctype="multipart/form-data" method="post">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Users file</label>
+                <input class="form-control" type="file" id="formFile" name="file">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

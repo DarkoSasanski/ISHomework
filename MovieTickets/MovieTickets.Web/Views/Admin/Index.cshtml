@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MovieTickets.Domain.Identity;
+@model IEnumerable<MovieTicketsApplicationUser>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Users</h1>
+
+<a asp-action="importUsers" class="btn btn-primary">Import users</a>
+
+<p class="text-center text-danger mt-3">@ViewBag.error</p>
+
+<table class="table mt-4" id="users">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MovieTicketsApplicationUser user in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => user.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => user.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => user.UserName)
+                </td>
+                <td>
+                    <a asp-route-email="@user.Email" asp-action="SetRole">Set role</a>    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

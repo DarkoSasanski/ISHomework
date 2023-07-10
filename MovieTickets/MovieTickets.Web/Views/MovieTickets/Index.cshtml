@@ -1,0 +1,90 @@
+﻿@using MovieTickets.Domain.Enum;
+@model List<MovieTickets.Domain.Domain.MovieTicket>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Tickets</h1>
+
+<p>
+    <a class="btn btn-link" asp-action="Create">Add New Ticket</a>
+</p>
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <form asp-action="Index" method="get">
+
+            <div class="row">
+                <input type="date" name="filter" class="form-control col-md-9"/>
+                <div class="col-md-1"></div>
+                <button type="submit" class="btn btn-outline-primary col-md-2">Filter</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+@if(User.IsInRole("Admin"))
+{
+    <div class="row mt-3">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <form asp-action="ExportTickets" method="get">
+
+            <div class="row">
+                @Html.DropDownList("genre", Enum.GetValues(typeof(MovieGenre)).Cast<MovieGenre>().Select(m => new SelectListItem
+                {
+                Text = m.ToString(),
+                Value = ((int)m).ToString()
+                }).Prepend(new SelectListItem { Text = "All", Value = "All" }), new { @class = "form-control col-md-9" })
+                <div class="col-md-1"></div>
+                <button type="submit" class="btn btn-outline-primary col-md-2">Export</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+}
+
+<div class="container mt-4">
+    @if(Model.Count == 0)
+    {
+        <h3 class="text-center">
+            No movies added
+        </h3>
+    }
+    @for(int i=0; i<Model.Count; i++)
+    {
+        var curr = Model[i];
+        if(i%3==0)
+        {
+            @:<div class="row">
+        }
+        <div class="col-md-4">
+            <div class="card" style="height:35rem; width:18rem">
+                <img src="@curr.Movie.MovieImage" class="card-img-top" style="height:15rem">
+                <div class="card-body">
+                    <h2 class="card-title">@curr.Movie.MovieName</h2>
+                    <p class="card-text">@curr.Movie.MovieDescription</p>
+                    <h3>$@curr.TicketPrice</h3>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="AddTicketToCart" asp-route-id="@curr.Id" class="btn btn-success">Add to Cart</a>
+                    <a asp-action="Edit" asp-route-id="@curr.Id" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+        if (i % 3 == 2)
+        {
+            @:</div>
+        }
+    }
+    
+</div>

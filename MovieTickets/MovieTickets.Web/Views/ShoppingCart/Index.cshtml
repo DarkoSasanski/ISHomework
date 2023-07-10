@@ -1,0 +1,63 @@
+﻿@using MovieTickets.Domain.DTO;
+@model ShoppingCartDto
+@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> Stripe
+
+@{
+    ViewData["Title"] = "ShoppingCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tickets</h1>
+
+<div class="container">
+    <!--<a asp-action="OrderNow" class="btn btn-success">Order</a>-->
+    @if(Model.Tickets.Count>0)
+    {
+        <form method="post" asp-controller="ShoppingCart" asp-action="PayOrder">
+            <script src="https://checkout.stripe.com/checkout.js"
+                    class="stripe-button"
+                    data-key="@Stripe.Value.PublishableKey"
+                    data-description="EShop Application Payment"
+                    data-locale="auto"
+                    data-label="Pay $@Model.TotalPrice"
+                    data-amount="@(Model.TotalPrice * 100.0)">
+
+            </script>
+        </form>
+    }
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Movie Name</th>
+                <th scope="col">Ticket Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Tickets.Count; i++)
+            {
+                var curr = Model.Tickets[i];
+                <tr>
+                    <th scope="row">@(i + 1)</th>
+                    <td>@curr.MovieTicket.Movie.MovieName</td>
+                    <td>$@curr.MovieTicket.TicketPrice</td>
+                    <td>@curr.Quantity</td>
+                    <td><a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@curr.Id" class="btn btn-danger">Remove</a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>$@Model.TotalPrice</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
